@@ -1,0 +1,156 @@
+// Events Styles
+
+.events {
+    width: 100%;
+    margin-bottom: 8.75rem;
+    position: relative;
+
+    &__slider-btn {
+        position: absolute;
+        top: 50%;
+        left: 4rem;
+        z-index: 2;
+        transform: translate(0, -50%);
+
+        &_next {
+            left: auto;
+            right: 4rem;
+        }
+    }
+}
+
+.event {
+    width: 100%;
+    height: 39.62rem;
+    color: $white;
+    padding-bottom: 13.3125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        max-width: calc($eventsContainerWidth + $containerPadding * 2 + 2.625rem);
+        padding-left: calc($containerPadding + 2.625rem);
+    }
+
+    &__name {
+        margin-bottom: 2.25rem;
+        max-width: 35.44rem;
+    }
+
+    &__description {
+        max-width: 35.44rem;
+        margin-bottom: 2.25rem;
+    }
+
+    &__btn {
+        position: absolute;
+        left: 50%;
+        bottom: 3.75rem;
+        transform: translate(-50%, 0);
+        white-space: nowrap;
+    }
+
+    &__vertical-text {
+        color: $gray3;
+        top: 0.5rem;
+        left: 1.5rem;
+
+        &::before {
+            background: $gray3;
+        }
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 1360px) {
+
+    .events {
+
+        &__slider-btn {
+            left: 1.25rem;
+
+            &_next {
+                left: auto;
+                right: 1.25rem;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1260px) {
+
+    .events {
+
+        &__slider-btn {
+            top: auto;
+            bottom: 5.625rem;
+            transform: translate(0, 0);
+        }
+    }
+
+    .event {
+
+        &__btn {
+            bottom: 6.46875rem;
+        }
+    }
+}
+
+@media all and (max-width: 991px) {
+
+    .events {
+        margin-bottom: 4.5rem;
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .events {
+
+        .container {
+            max-width: calc($containerWidth + $containerPadding * 2);
+            padding: 0 $containerPadding;
+        }
+    }
+    
+    .event {
+
+        &__description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+
+        &__vertical-text {
+            writing-mode: horizontal-tb;
+            position: static;
+            transform: rotate(0);
+            width: auto;
+            height: auto;
+            flex-direction: row-reverse;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1.25rem;
+
+            &::before {
+                height: 0.0625rem;
+                width: 5.8125rem;
+            }
+        }
+    }
+
+}

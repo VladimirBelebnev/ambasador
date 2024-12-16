@@ -1,0 +1,38 @@
+// Imports Files
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+// Zeroing Out Files
+
+@import "ZeroingOut.scss";
+
+// Fonts
+
+@import "fonts.scss";
+
+// Variables
+
+@import "variables.scss";
+
+// Started Styles Files
+
+@import "startedStyles.scss";
+
+// General Classes Files
+
+@import "generalClasses.scss";
+
+// Sections Files
+
+@import "sections/header.scss";
+@import "sections/home.scss";
+@import "sections/about.scss";
+@import "sections/profitable.scss";
+@import "sections/rooms.scss";
+@import "sections/events.scss";
+@import "sections/info-slider.scss";
+@import "sections/sleep.scss";
+@import "sections/journal.scss";
+@import "sections/feedbacks.scss";
+@import "sections/footer.scss";
+@import "sections/modal.scss";

@@ -1,0 +1,78 @@
+// Profitable Styles
+
+.profitable {
+    width: 100%;
+    background: $primaryColor;
+    color: $white;
+    padding: 7.5rem 0;
+    position: relative;
+    z-index: 1;
+
+    &__text-section {
+        max-width: calc(50% - 1rem);
+        padding-right: 1rem;
+    }
+
+    &__title {
+        margin-bottom: 2.25rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2.25rem;
+        max-width: 32.8125rem;
+    }
+
+    &__img-section {
+        height: 100%;
+        width: calc(50% + 1rem);
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &::before {
+            content: "";
+            width: 26.25rem;
+            height: 38.38rem;
+            position: absolute;
+            bottom: 0;
+            right: 1.5rem;
+            background: url("../images/profitable/profitable-woman.png") no-repeat 100%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .profitable {
+        padding: 0 0 16.12rem 0;
+
+        &__text-section {
+            max-width: 100%;
+            padding: 5.625rem 0;
+        }
+
+        &__img-section {
+            top: auto;
+            bottom: 0;
+            left: 0;
+            height: 16.12rem;
+            width: 100%;
+
+            &::before {
+                width: 15.06rem;
+                height: 22.06rem;
+                right: 1.25rem;
+                background-size: contain;
+            }
+        }
+    }
+
+}

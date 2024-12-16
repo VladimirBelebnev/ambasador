@@ -1,0 +1,100 @@
+// Home Styles
+
+.home {
+    width: 100%;
+    min-height: 50rem;
+    height: 50rem;
+    background: url("../images/home/home-bg.png") no-repeat left top / cover;
+    color: $white;
+    position: relative;
+    padding-bottom: 8.125rem;
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        font-family: $secondaryFont;
+        font-size: 3.25rem;
+        line-height: 135%;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1.25rem;
+    }
+
+    &__mobile-btn {
+        display: none;
+        width: 100%;
+        padding: 1.5rem 1.75rem;
+        margin-top: 3.25rem;
+    }
+}
+
+.rent-form {
+    max-width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    max-width: 60.81rem;
+    width: 60.81rem;
+    min-height: 10.25rem;
+    padding: 0 3.25rem;
+    background: $primaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    z-index: 1;
+
+    &__input {
+        width: 100%;
+
+        &:nth-child(3) {
+            flex-shrink: 1.1;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        flex-shrink: 1.15;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 991px) {
+
+    .home {
+        min-height: 46.88rem;
+        height: 46.88rem;
+        background-position: center bottom;
+        padding-bottom: 3.375rem;
+        
+        .rent-form {
+            display: none;
+        }
+
+        &__mobile-btn {
+            display: block;
+        }
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .home {
+        
+        &__title {
+            font-size: 2.44rem;
+        }
+    }
+
+}

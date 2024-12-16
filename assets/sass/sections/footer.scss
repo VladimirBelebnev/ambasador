@@ -1,0 +1,138 @@
+// Footer Styles
+
+.footer {
+    width: 100%;
+    background: $green1;
+    color: $white;
+
+    &__top {
+        padding: 2.75rem 0;
+        position: relative;
+        border-bottom: 0.0625rem solid $gray4;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__top &__column:last-child {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__top &__column:first-child {
+        max-width: 16.5625rem;
+    }
+
+    &__adress {
+        font-size: 0.88rem;
+        line-height: 143%;
+    }
+
+    &__phone {
+        font-size: 0.88rem;
+        line-height: 143%;
+        text-decoration: underline;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__soc-link {
+        width: 2rem;
+        height: 2rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: $white;
+        transition: .3s;
+
+        svg {
+            transition: .3s;
+        }
+
+        &:hover {
+            opacity: 1;
+            background: $secondaryColor;
+
+            svg {
+                fill: $white;
+            }
+        }
+    }
+
+    &__middle {
+        padding: 2.5rem;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__bottom {
+        padding: 1.5rem 0;
+        background: $green2;
+        text-align: center;
+    }
+
+    &__rights {
+        font-size: 0.88rem;
+        line-height: 143%;
+
+        &_link {
+            text-decoration: underline;
+        }
+    }
+
+    &__logo {
+        background-image: url("../images/footer/footer-logo.svg");
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .footer {
+
+        &__top {
+            text-align: center;
+
+            .container {
+                flex-direction: column;
+                gap: 2.5rem;
+
+                .footer__column:first-child {
+                    order: 2;
+                }
+
+                .footer__column:last-child {
+                    order: 3;
+                }
+            }
+        }
+
+        &__middle {
+
+            .container {
+                justify-content: center;
+            }
+        }
+
+        &__logo {
+            position: static;
+            transform: translate(0, 0);
+        }
+    }
+}

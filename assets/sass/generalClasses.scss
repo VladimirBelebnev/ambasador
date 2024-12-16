@@ -1,0 +1,246 @@
+// General Classes
+
+.container {
+    width: 100%;
+    max-width: calc($containerWidth + $containerPadding * 2);
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}
+
+// Logo Styles
+
+.logo {
+    width: 10.5rem;
+    height: 4.375rem;
+    background: url("../images/general/logo.svg") no-repeat center / 100%;
+}
+
+// Buttons Styles
+
+.btn {
+    font-size: 0.88rem;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 1.25rem;
+    outline: 1px solid $white;
+    color: $white;
+    transition: .3s;
+
+    &:hover {
+        background: $white;
+        color: $black;
+        opacity: 1;
+    }
+
+    &_orange {
+        padding: 1.5625rem 1.75rem;
+        outline: none;
+        background: $secondaryColor;
+    }
+
+    &_line-primary {
+        outline-color: $secondaryColor;
+        color: $secondaryColor;
+
+        &:hover {
+            background: $secondaryColor;
+            color: $white;
+        }
+    }
+
+    &_line-dark {
+        outline-color: $black;
+        color: $black;
+    }
+}
+
+.link {
+    font-family: $secondaryFont;
+    font-weight: $medium;
+    font-size: 1.38rem;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $secondaryColor;
+    position: relative;
+    margin-bottom: 0.8125rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 0;
+        width: 3.75rem;
+        height: 0.0625rem;
+        background: $secondaryColor;
+        transition: .3s;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+// Drop Down Styles
+
+.drop-down {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 15rem;
+    padding: 1rem;
+    color: $black;
+    background: $white;
+    box-shadow: 0 0 1rem $shadow1;
+    z-index: 100;
+    display: none;
+
+    &_full-width {
+        width: 100%;
+    }
+
+    &__item {
+        padding: 0.5rem 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $border2;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    &__btn,
+    &__link {
+        width: 100%;
+        font-size: 0.88rem;
+        line-height: 157%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: left;
+    }
+}
+
+.drop-down-btn {
+
+    &::before,
+    &::after {
+        transition: transform .3s ease;
+    }
+
+    &_active {
+
+        &::before,
+        &::after {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+// Input Styles
+
+.input {
+    width: 15.12rem;
+    padding: 1.25rem;
+    border: 1px solid $white;
+    text-align: left;
+}
+
+.input-group {
+    position: relative;
+    cursor: pointer;
+
+    &:hover > &__btn,
+    &:hover > svg {
+        opacity: .5;
+    }
+
+    &_drop-down {
+        position: relative;
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__btn {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    svg {
+        transition: opacity .5s ease;
+        position: absolute;
+        top: 50%;
+        right: 1.25rem;
+        transform: translate(0, -50%);
+        z-index: 1;
+        transition: .3s;
+    }
+
+    &_drop-down.input-group_active {
+
+        svg {
+            transform: translate(0, -50%) rotate(-180deg);
+        }
+    }
+}
+
+// Title Styles
+
+.title {
+    font-family: $secondaryFont;
+    font-weight: $medium;
+    font-size: 3.44rem;
+    line-height: 100%;
+    color: $secondaryColor;
+}
+
+// Vertical Text
+
+.vertical-text {
+    width: 0.625rem;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.88rem;
+    line-height: 157%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $gray2;
+    display: inline-flex;
+    align-items: center;
+    transform: rotate(180deg);
+    gap: 0.5rem;
+
+    &::before {
+        content: "";
+        width: 0.0625rem;
+        height: 5.8125rem;
+        background: $border3;
+    }
+}
+
+// None Styles
+
+.none {
+    display: none !important;
+}
+
+.hidden {
+    overflow: hidden !important;
+}
