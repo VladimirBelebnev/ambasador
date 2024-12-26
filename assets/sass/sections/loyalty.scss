@@ -1,0 +1,72 @@
+// Loyalty Styles
+
+.loyalty {
+    width: 100%;
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    &__text-section {
+        max-width: 47rem;
+    }
+
+    &__title {
+        max-width: 47rem;
+        margin-bottom: 1.75rem;
+    }
+
+    &__text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    &__text {
+
+        &_bold {
+            font-weight: $semibold;
+        }
+
+        &_link {
+            color: $secondaryColor;
+            text-decoration: underline;
+        }
+    }
+
+    &__mini-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    &__list {
+        margin-left: 1.75rem;
+    }
+
+    &__list-item {
+        list-style-type: disc;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 600px) {
+
+    .loyalty {
+
+        
+    }
+
+    .loyalty ~ .cashback {
+        margin-bottom: 0;
+    }
+
+    .loyalty ~ .recommended {
+        padding: 4.5rem 0;
+    }
+
+}

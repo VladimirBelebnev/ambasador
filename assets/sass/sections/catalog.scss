@@ -1,0 +1,224 @@
+// Catalog Styles
+
+.catalog {
+    width: 100%;
+    margin-bottom: 8.75rem;
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+        margin-bottom: 2.75rem;
+        flex-wrap: wrap;
+
+        &_column {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.75rem;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4.875rem 2rem;
+    }
+
+    &__drop-down-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: $semibold;
+    }
+
+    &__btn-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+    }
+}
+
+.catalog .room,
+.promotion,
+.event-item,
+.news {
+    width: 100%;
+    color: $black;
+
+    &__img-section {
+        width: 100%;
+        height: 19.31rem;
+        position: relative;
+        color: $white;
+        margin-bottom: 2.5rem;
+    }
+
+    &__preview {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        z-index: 1;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__info {
+        position: absolute;
+        top: 1.25rem;
+        left: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    &__info-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.88rem;
+        line-height: 143%;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 160%;
+        letter-spacing: 0.02em;
+        font-weight: $semibold;
+        margin-bottom: 1rem;
+        color: $gray6;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: $gray1;
+        margin-bottom: 0.75rem;
+    }
+
+    &__price {
+        font-size: 1.5rem;
+        line-height: 160%;
+        letter-spacing: 0.02em;
+        text-transform: lowercase;
+        color: $secondaryColor;
+        font-weight: $semibold;
+        margin-bottom: 1rem;
+
+        &_gray {
+            font-size: 1.12rem;
+            color: $gray1;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__rent-btn {
+        padding: 1rem 1.25rem;
+    }
+}
+
+.event-item {
+    height: auto;
+    justify-content: flex-start;
+    padding-bottom: 0;
+
+    &__img {
+        height: 19.31rem;
+        position: static;
+    }
+
+    &__description {
+        max-width: 100%;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 1000px) {
+
+    .catalog {
+
+        &__items {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+    }
+
+    .event-item {
+
+        &__img-link {
+            width: 100%;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .catalog {
+        margin-bottom: 4.5rem;
+
+        &__header {
+            margin-bottom: 2.75rem;
+        }
+
+        &_mobile-margin {
+            padding-top: 2rem;
+        }
+
+        &__title {
+
+            &_mobile {
+                font-size: 2.625rem;
+            }
+        }
+
+        &__more-btn {
+            width: 100%;
+            padding: 1.5rem;
+        }
+
+        &__btn-wrap {
+            margin-top: 3.25rem;
+        }
+    }
+
+    .room,
+    .promotion,
+    .event-item,
+    .news {
+
+        &__img {
+            height: 100%;
+        }
+
+        &__img-section {
+            height: 11.56rem;
+            margin-bottom: 2rem;
+        }
+
+        &__title {
+            margin-bottom: 0.75rem;
+        }
+
+        &__rent-btn,
+        &__more-btn {
+            width: 100%;
+        }
+
+        &__rent-btn {
+            padding: 0.875rem 1.25rem;
+        }
+    }
+}

@@ -5,6 +5,10 @@
     margin-bottom: 8.75rem;
     position: relative;
 
+    &_no-margin {
+        margin-bottom: 0;
+    }
+
     &__slider-btn {
         position: absolute;
         top: 50%;

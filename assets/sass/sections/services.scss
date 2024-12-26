@@ -1,0 +1,95 @@
+// Services Styles
+
+.services {
+    width: 100%;
+    padding-top: 1.5rem;
+    margin-bottom: 5.625rem;
+
+    &__title {
+        margin-bottom: 2.5rem;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        & > *:not(:last-child, :nth-child(3n)) {
+            border-right: 0.0625rem solid $gray10;
+        }
+
+        & > *:not(:nth-child(7), :nth-child(8), :nth-child(9)) {
+            border-bottom: 0.0625rem solid $gray10;
+        }
+    }
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.75rem;
+    text-align: center;
+    gap: 1.75rem;
+    transition: .3s;
+
+    svg,
+    span svg path {
+        transition: .3s;
+    }
+
+    &:hover {
+        color: $white;
+        background: $secondaryColor;
+        opacity: 1;
+
+        svg:not(span svg) {
+            fill: $white;
+        }
+
+        span svg path {
+            stroke: $white;
+        }
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .services {
+    
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+    
+            & > *:not(:last-child, :nth-child(3n)) {
+                border-right: none;
+            }
+    
+            & > *:not(:nth-child(7), :nth-child(8), :nth-child(9)) {
+                border-bottom: none;
+            }
+        }
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .services {
+        margin-bottom: 3.25rem;
+    }
+
+    .service {
+        padding: 1rem 0.75rem;
+    }
+
+    .services ~ .cashback {
+        margin-bottom: 0;
+    }
+
+    .services ~ .recommended {
+        padding: 4.5rem 0;
+    }
+
+}

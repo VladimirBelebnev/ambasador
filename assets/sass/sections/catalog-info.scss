@@ -1,0 +1,86 @@
+// Catalog Info Styles
+
+.catalog-info {
+    width: 100%;
+    min-height: 31.12rem;
+    background: url("../images/catalog/first-bg.webp") no-repeat top / cover;
+    color: $white;
+    padding-top: 11.875rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 11rem;
+    padding-bottom: 6.25rem;
+
+    &__breadcrums {
+        margin-bottom: 3.75rem;
+    }
+
+    &__text-row {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__title {
+        max-width: 26rem;
+        width: 100%;
+    }
+
+    &__text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 49.5rem;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 1120px) {
+
+    .catalog-info {
+        padding-top: 6.25rem;
+
+        &__text-row {
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+    }
+
+}
+
+@media all and (max-width: 1020px) {
+
+    .catalog-info {
+        padding-top: 6.25rem;
+        min-height: 37.62rem;
+        margin-bottom: 16.4375rem;
+
+        &__text-row {
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        &__breadcrums {
+            margin-bottom: 1.75rem;
+        }
+
+        .rent-form {
+            flex-direction: column;
+            padding: 2.5rem;
+            max-width: 22.5rem;
+        }
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .catalog-info {
+        padding-bottom: 12.875rem;
+
+        .rent-form {
+            max-width: calc(100% - 2.5rem);
+        }
+    }
+
+}

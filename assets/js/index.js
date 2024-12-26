@@ -1,7 +1,7 @@
 $(() => {
     // Sliders
 
-    let roomSlider = new Swiper(".rooms__slider", {
+    let roomsSlider = new Swiper(".rooms__slider", {
         direction: "horizontal",
         slidesPerView: 1.2,
 
@@ -9,6 +9,23 @@ $(() => {
             nextEl: '.rooms__slider-btn_next',
             prevEl: '.rooms__slider-btn_prev',
         },
+
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+            },
+            900: {
+                slidesPerView: 3,
+            },
+            1100: {
+                slidesPerView: 4,
+            },
+        },
+    });
+
+    let hallsSlider = new Swiper(".halls__mobile-slider", {
+        direction: "horizontal",
+        slidesPerView: 1.2,
 
         breakpoints: {
             600: {
@@ -69,6 +86,45 @@ $(() => {
         navigation: {
             nextEl: '.feedbacks__slider-btn_next',
             prevEl: '.feedbacks__slider-btn_prev',
+        },
+    });
+
+    let roomSlider = new Swiper(".service-slider__slider", {
+        direction: "horizontal",
+        slidesPerView: 1,
+
+        navigation: {
+            nextEl: '.service-slider__slider-btn_next',
+            prevEl: '.service-slider__slider-btn_prev',
+        },
+
+        pagination: {
+            el: ".service-slider__pagination",
+        },
+    });
+
+    let roomSliderMobile = new Swiper(".service-slider__slider_mobile", {
+        direction: "horizontal",
+        slidesPerView: 1,
+
+        navigation: {
+            nextEl: '.service-slider__slider-btn_next',
+            prevEl: '.service-slider__slider-btn_prev',
+        },
+
+        pagination: {
+            el: ".service-slider__pagination_mobile",
+        },
+    });
+
+    let recommendedSlider = new Swiper(".recommended__slider", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 32,
+
+        navigation: {
+            nextEl: '.recommended__slider-btn_next',
+            prevEl: '.recommended__slider-btn_prev',
         },
     });
 
@@ -143,4 +199,56 @@ $(() => {
         dropDown.slideToggle(300);
     });
 
+    $(".rent-form__btn").click(event => {
+        $(".rent-form").animate({
+            "height": ["toggle", "swing"],
+        });
+        return false;
+    });
+
+    if ($(".main").hasClass("main_margin-top")) {
+        let height = $('.header').height();
+        $(".main").css("padding-top", `${height}px`);
+    }
+
+    $(".service-chars__mobile-tab-open").click((event) => {
+        let hidden = $(event.target).next();
+        let tab = $(event.target).parent();
+        let tabs = tab.parent();
+
+        tab.toggleClass("service-chars__mobile-tab_active");
+        hidden.slideToggle(300);
+
+        console.log(tab, tabs);
+
+        tabs.find(".service-chars__mobile-tab").not(tab).removeClass("service-chars__mobile-tab_active");
+        tabs.find(".service-chars__mobile-tab-hidden").not(hidden).slideUp(300);
+    });
+
+    $(".service-chars__tab-btn").click((event) => {
+        let tabs = $(event.target).closest("header").next().find(".service-chars__tab");
+        let buttons = $(event.target).closest(".service-chars__tab-buttons").find(".service-chars__tab-btn");
+        let data = $(event.target).attr("data-tab");
+
+        tabs.each((tab) => {
+            let current = tabs.eq(tab);
+            if (current.attr("data-tab") === data) {
+                tabs.not(current).slideUp(300);
+                current.slideDown(300);
+            }
+        });
+
+        buttons.each((btn) => {
+            let current = buttons.eq(btn);
+            if (current.attr("data-tab") === $(event.target).attr("data-tab")) {
+                buttons.not(buttons.eq(btn)).removeClass("service-chars__tab-btn_active");
+                buttons.eq(btn).addClass("service-chars__tab-btn_active");
+            }
+        });
+    });
+
+    $(".service-description__add-open-btn").click((event) => {
+        $(event.target).next().slideToggle(300);
+        $(event.target).toggleClass("service-description__add-open-btn_active");
+    });
 });

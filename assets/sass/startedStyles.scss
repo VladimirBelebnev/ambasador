@@ -12,7 +12,7 @@ body {
     line-height: 160%;
     // letter-spacing: 0.02em;
     letter-spacing: 0;
-    color: $black;
+    color: $gray6;
 }
 
 .wrapper {
@@ -24,6 +24,10 @@ body {
 .main {
     min-height: 100vh;
     background: $white;
+
+    &_margin-top {
+        padding-top: 11.8125rem;
+    }
 }
 
 svg, img, video {
@@ -51,7 +55,7 @@ a, button, label {
     background: none;
     font-size: inherit;
     cursor: pointer;
-    transition: .5s;
+    transition: .3s;
 }
 
 a:hover, button:hover {

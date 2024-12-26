@@ -1,0 +1,89 @@
+// Room Info Styles
+
+.service-info {
+    width: 100%;
+    margin-bottom: 3.75rem;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__line {
+        height: 5.125rem;
+        width: 0.125rem;
+        background: $gray5;
+    }
+}
+
+.service-info-item {
+    width: 9rem;
+    max-width: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.pseudo-wrap {
+    position: relative;
+}
+
+.service-pseudo-1,
+.service-pseudo-2,
+.service-pseudo-3,
+.service-pseudo-4,
+.service-pseudo-5,
+.service-pseudo-6 {
+    position: absolute;
+    width: 41.8125rem;
+    height: 45.75rem;
+    background: url("../images/room/service-pseudo-1.svg") no-repeat center / 100%;
+    z-index: -1;
+    top: 3rem;
+    right: 0;
+}
+
+.service-pseudo-3,
+.service-pseudo-4,
+.service-pseudo-5 {
+    top: 1rem;
+}
+
+.service-pseudo-6 {
+    top: -9rem;
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .service-info {
+        display: none;
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .service-pseudo-1 {
+        right: -70%;
+    }
+
+    .service-pseudo-2,
+    .service-pseudo-4 {
+        display: none;
+    }
+
+    .service-pseudo-3 {
+        top: 28rem;
+        right: -75%;
+    }
+
+    .service-pseudo-5,
+    .service-pseudo-6 {
+        top: 9rem;
+        right: -60%;
+    }
+}

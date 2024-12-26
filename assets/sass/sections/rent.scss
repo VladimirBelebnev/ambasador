@@ -1,0 +1,15 @@
+// Rent Styles
+
+.rent {
+    padding-top: 1.5rem;
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .rent ~ .recommended {
+        padding: 4.5rem 0;
+    }
+
+}

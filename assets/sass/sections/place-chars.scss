@@ -1,0 +1,76 @@
+// Place Chars Styles
+
+.place-chars {
+    width: 100%;
+    margin-bottom: 5.625rem;
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 110%;
+        margin-bottom: 2rem;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__btn-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.place-char {
+    width: 10.62rem;
+    max-width: 10.62rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__img {
+        margin-bottom: 0.75rem;
+    }
+
+    &__name {
+        font-size: 0.88rem;
+        line-height: 157%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        font-size: 0.88rem;
+        line-height: 143%;
+        color: $gray9;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 600px) {
+
+    .place-chars {
+        
+        &__items {
+            gap: 1.75rem 1.125rem;
+            margin-bottom: 0;
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        & + .recommended {
+            padding: 0;
+            margin-bottom: 4.5rem;
+            background: none;
+        }
+    }
+}

@@ -1,0 +1,258 @@
+// Room Description Styles
+
+.service-description {
+    width: 100%;
+    margin-bottom: 5.625rem;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        width: 45.9375rem;
+        height: 45.9375rem;
+        background: url("../images/room/description-bg.svg") no-repeat center / 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    &__text-section {
+        max-width: 47rem;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 110%;
+        margin-bottom: 2rem;
+    }
+
+    &__text-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__images-section {
+        width: 33rem;
+        height: 33.81rem;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 29.166666%;
+            height: 58.599526%;
+            position: absolute;
+            top: 19.964507%;
+            right: calc(34.828748% - 0.2%);
+            background: $white;
+            z-index: 2;
+        }
+    }
+
+    &__first-img {
+        height: 78.5566%;
+        width: 63.8181%;
+        position: relative;
+        z-index: 2;
+        object-fit: cover;
+    }
+
+    &__second-img {
+        height: 78.5566%;
+        width: 63.8181%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        object-fit: cover;
+    }
+
+    &__line {
+        height: 5.125rem;
+        width: 0.125rem;
+        background: $gray5;
+    }
+
+    &__items {
+        max-width: 21.25rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3.75rem;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &_padding {
+            padding-top: 6.9375rem;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.75rem;
+        max-width: 47rem;
+    }
+
+    &__list-item {
+        list-style-type: disc;
+    }
+
+    &__list_links &__list-link {
+        font-size: 1rem;
+        text-decoration: underline;
+        color: $secondaryColor;
+    }
+
+    &__list_links {
+        margin-left: 1.25rem;
+        margin-top: 1.75rem;
+    }
+
+    &__list_links &__list-item {
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.45rem;
+            left: -1.25rem;
+            width: 1rem;
+            height: 1rem;
+            background: url("../images/room/document.svg") no-repeat center / 100%;
+            transition: .3s;
+        }
+    }
+
+    &__list_links &__list-item:hover {
+
+        &::before {
+            opacity: 0.5;
+        }
+    }
+
+    &__add &__list {
+        margin-top: 1.5rem;
+    }
+
+    &__phone {
+        font-weight: $semibold;
+
+        &_link {
+            font-weight: $normal;
+        }
+    }
+
+    &__add-open-btn {
+        font-weight: $semibold;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        &::after {
+            content: "";
+            height: 1.75rem;
+            width: 1.75rem;
+            background: url("../images/room/arrow-down.svg") no-repeat center / 100%;
+            transform: rotate(180deg);
+            transition: .3s;
+        }
+
+        &_active {
+
+            &::after {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &__add-hidden {
+        display: none;
+    }
+
+    &__add-hidden &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.125rem 2.5rem;
+
+        &_one-column {
+            grid-template-columns: 1fr;
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__time {
+        font-size: 1.5rem;
+        line-height: 160%;
+        letter-spacing: 0.02em;
+        font-weight: $semibold;
+    }
+
+    &__description {
+        font-size: 1rem;
+        line-height: 160%;
+        color: $gray9;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 900px) {
+
+    .service-description {
+        margin-bottom: 4.5rem;
+
+        &__right {
+            display: none;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .service-description {
+        
+        &__list {
+            gap: 0.75rem;
+        }
+
+        &__title {
+            margin-bottom: 0.75rem;
+        }
+
+        &__text-section {
+            gap: 1rem;
+        }
+    }
+
+    .service-description ~ .cashback {
+        margin-bottom: 0;
+    }
+
+    .service-description ~ .recommended {
+        padding: 4.5rem 0;
+    }
+}

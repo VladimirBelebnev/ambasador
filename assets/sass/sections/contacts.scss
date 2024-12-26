@@ -1,0 +1,118 @@
+// Contacts Styles
+
+.contacts {
+    width: 100%;
+    padding-top: 1.5rem;
+    margin-bottom: 5.625rem;
+    position: relative;
+
+    &__main {
+        margin-bottom: 2rem;
+
+        & > *:not(:first-child, :last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1.875rem;
+    }
+
+    &__adress {
+
+        &::before {
+            background: url("../images/contacts/adress.svg") no-repeat center / 100%;
+        }
+    }
+
+    &__phone {
+
+        &::before {
+            background: url("../images/contacts/phone.svg") no-repeat center / 100%;
+        }
+    }
+
+    &__email {
+
+        &::before {
+            background: url("../images/contacts/email.svg") no-repeat center / 100%;
+        }
+    }
+
+    &__adress,
+    &__phone,
+    &__email {
+        display: flex;
+        gap: 0.5rem;
+
+        &::before {
+            content: "";
+            height: 1.75rem;
+            min-width: 1.75rem;
+        }
+    }
+
+    &__soc-row {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__soc-link {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: $secondaryColor;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__row {
+        display: flex;
+        gap: 6.6875rem;
+        margin-bottom: 2.1875rem;
+    }
+
+    &__column {
+
+        & > *:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__title-mini {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .contacts {
+        margin-bottom: 4.5rem;
+        padding-bottom: calc(32.62rem + 4.5rem);
+        
+        &__row {
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        iframe {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .contacts ~ .cashback {
+        margin-bottom: 0;
+    }
+
+    .contacts ~ .recommended {
+        padding: 4.5rem 0;
+    }
+
+}

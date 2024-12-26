@@ -1,0 +1,71 @@
+// Cashback Styles
+
+.cashback {
+    width: 100%;
+    height: 23.94rem;
+    min-height: 23.94rem;
+    background: $orange1 url("../images/cashback/cashback-bg.png") no-repeat center / cover;
+    text-align: center;
+    padding-top: 5rem;
+    position: relative;
+    z-index: 2;
+
+    &_margin {
+        margin-bottom: 2.5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    &__title {
+        max-width: 49.5rem;
+    }
+
+    &__subtitle {
+        color: $green3;
+        font-weight: $medium;
+    }
+
+    &__btn {
+        display: none;
+    }
+}
+
+// Media Queries
+
+@media all and (max-width: 1020px) {
+
+    .cashback {
+        padding: 5rem 0 5.625rem;
+        height: auto;
+        min-height: auto;
+
+        .rent-form {
+            display: none;
+        }
+
+        &__btn {
+            margin-top: 0.5rem;
+            display: block;
+            padding: 1.5625rem 1.75rem;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .cashback {
+
+        &__title {
+            font-size: 2.625rem;
+        }
+
+        &__btn {
+            width: 100%;
+        }
+    }
+}

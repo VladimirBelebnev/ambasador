@@ -1,0 +1,249 @@
+// Room Chars Styles
+
+.service-chars {
+    width: 100%;
+    margin-bottom: 5.625rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2.5rem;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 110%;
+    }
+
+    &__tab-buttons {
+        display: flex;
+    }
+
+    &__tab-btn {
+        padding: 1rem 2.375rem;
+        border-bottom: 0.125rem solid $gray5;
+        color: $gray5;
+        transition: .3s;
+
+        &_active {
+            border-color: $secondaryColor;
+            color: $gray6;
+        }
+    }
+
+    &__tab {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+
+    &__tab-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem 1.375rem;
+
+        &_one-column {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+
+    &__tab-list-item {
+        list-style-type: disc;
+        margin-left: 1.75rem;
+    }
+
+    &__tab-list-text {
+        font-size: 1rem;
+    }
+
+    &__main-items {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__tab-title {
+        font-size: 1.5rem;
+        line-height: 160%;
+        font-weight: $semibold;
+        margin-bottom: 1rem;
+    }
+
+    &__text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        line-height: 160%;
+
+        &_link {
+            color: $secondaryColor;
+            text-decoration: underline;
+        }
+    }
+
+    &__mobile-btn {
+        display: none;
+    }
+
+    &__tabs {
+
+        &_mobile {
+            display: none;
+        }
+    }
+
+    &__mobile-tab-open {
+        width: 100%;
+        text-align: left;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid $gray5;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        &::after {
+            content: "";
+            width: 1.5rem;
+            height: 1.5rem;
+            background: url("../images/room/arrow-down.svg") no-repeat center / 100%;
+            transform: rotate(180deg);
+            transition: .3s;
+        }
+    }
+
+    &__mobile-tab-hidden {
+        display: none;
+    }
+
+    &__mobile-btn {
+        display: none;
+        margin-top: 2.5rem;
+        width: 100%;
+        padding: 1.5625rem 1.75rem;
+    }
+
+    &__mobile-tab-open {
+        transition: .3s;
+    }
+
+    &__mobile-tab_active &__mobile-tab-open {
+        border-color: $white;
+    }
+
+    &__mobile-tab_active &__mobile-tab-open {
+        
+        &::after {
+            transform: rotate(0);
+        }
+    }
+}
+
+.loyalty-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 0.75rem;
+    gap: 0.75rem;
+    width: 25.69rem;
+    min-height: 7.56rem;
+    border: 1px solid $secondaryColor;
+
+    &__title {
+        font-weight: $semibold;
+    }
+
+    &__orange-text {
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $semibold;
+    }
+
+    &__description {
+        font-size: 1rem;
+    }
+}
+
+
+// Media Queries
+
+@media all and (max-width: 850px) {
+
+    .service-chars {
+
+        &_mobile &__tabs {
+            display: none;
+
+            &_mobile {
+                display: block;
+            }
+        }
+
+        &_mobile &__tab-buttons {
+            display: none;
+        }
+
+        &_mobile &__header {
+            margin-bottom: 1.75rem;
+        }
+
+        &_mobile &__tab-list {
+            grid-template-columns: 1fr;
+        }
+
+        &:not(.service-chars_mobile) &__header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        &:not(.service-chars_mobile) &__main-items {
+            flex-direction: column;
+        }
+
+        .loyalty-item {
+            min-height: 7.56rem;
+            width: 100%;
+            padding: 1rem 0.75rem;
+        }
+
+        &:not(.service-chars_mobile) {
+            margin-bottom: 4.5rem;
+        }
+
+        &:not(.service-chars_mobile) &__tab-btn {
+            padding: 0.75rem;
+            width: 100%;
+        }
+
+        &:not(.service-chars_mobile) &__tab-buttons {
+            width: 100%;
+        }
+
+        &__mobile-btn {
+            display: block;
+        }
+    }
+}
+
+@media all and (max-width: 395px) {
+
+    .service-chars {
+
+        &:not(.service-chars_mobile) &__tab-buttons {
+            flex-direction: column;
+        }
+    }
+
+}
